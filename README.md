@@ -112,9 +112,3 @@ Buka browser dan akses URL berikut:
 2. Buka *endpoint* `GET /users`, klik tombol **Try it out** lalu **Execute**.
 3. **Percobaan Pertama:** Perhatikan waktu respons (*Server response time*). Waktu akan menunjukkan angka di atas 3000 ms (karena mengambil dari proses Database utama yang berat).
 4. **Percobaan Kedua:** Klik **Execute** sekali lagi dalam rentang waktu kurang dari 60 detik. Perhatikan waktu respons akan turun drastis (hanya sekitar 5 - 15 ms) karena data langsung disajikan dari memori Redis!
-
-```
-
-Sudah jauh lebih rapi sekarang! Apakah kamu ingin saya bantu menyiapkan perintah `.gitignore` juga sebelum *project* ini kamu *push* ke GitHub?
-
-```
