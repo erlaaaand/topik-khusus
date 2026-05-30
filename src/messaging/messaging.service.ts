@@ -11,7 +11,9 @@ export class MessagingService {
   ) {}
 
   async publishEvent(pattern: string, data: unknown): Promise<void> {
-    this.logger.log(`Publishing event [${pattern}]`);
+    this.logger.log(`[PUBLISH] Event "${pattern}" dikirim ke RabbitMQ`);
+    this.logger.debug(`[PUBLISH] Payload: ${JSON.stringify(data)}`);
     this.client.emit(pattern, data);
+    this.logger.log(`[PUBLISH] Event "${pattern}" berhasil di-emit`);
   }
 }

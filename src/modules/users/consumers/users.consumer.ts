@@ -15,8 +15,9 @@ export class UsersConsumer {
 
   @EventPattern(EVENT_PATTERNS.USER_CREATED)
   handleUserCreated(@Payload() data: UserCreatedPayload): void {
-    this.logger.log(
-      `[RabbitMQ] Event diterima - User Created: ${data.name} (${data.email}) | ID: ${data.userId}`,
-    );
+    this.logger.log(`[CONSUMER] Event "${EVENT_PATTERNS.USER_CREATED}" diterima dari RabbitMQ`);
+    this.logger.log(`[CONSUMER] User baru — id: ${data.userId} | nama: ${data.name} | email: ${data.email}`);
+    this.logger.debug(`[CONSUMER] Timestamp event: ${String(data.timestamp)}`);
+    this.logger.log(`[CONSUMER] Event "${EVENT_PATTERNS.USER_CREATED}" selesai diproses`);
   }
 }
